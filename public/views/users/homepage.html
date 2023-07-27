@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="../../assets/style/main.css" rel="stylesheet"/>
+    <script src="../../utils/include.mjs" type="module"></script>
+    <title>Home</title>
+</head>
+
+<body>
+
+     <!-- header -->
+     <header>
+        <div include-html="../common/header.html"></div>
+    </header>
+    
+    <div class="main m-4">
+        <div class="container">
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-md btn-danger">
+                    <a href="../../index.html">Logout</a>
+                </button>
+            </div>
+        </div>
+        <div id="carousel" class="container">
+            <div class="d-flex justify-content-center">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../../assets/images/1632564416_Jzk0PW_sabka_saath_sab_ka_wikas.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../../assets/images/banner.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="../../assets/images/ncw_banners_02.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container m-3">
+            <div class="d-flex justify-content-around">
+                <div class="card">
+                    <img src="https://media.istockphoto.com/vectors/little-businessman-signs-a-contract-with-a-giant-vector-id1192835215?k=20&m=1192835215&s=612x612&w=0&h=cp3_ipRyNQayGZOPuI0XZ7oZupgmducbNsc59unHWn0=" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="./createwill.html"><p class="card-title">Create Property Will</p></a>
+                    </div>
+                    <p class="card-text">
+                        Allows you to create property will on blockchain.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.w600.comps.canstockphoto.com/correction-grunge-stamp-correction-vector-clipart_csp82289104.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="./correction.html"><p class="card-title">Apply For Correction</p></a>
+                    </div>
+                    <p class="card-text">
+                        Allows you to initiate request for NFT correction.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.imgbin.com/14/2/18/imgbin-file-sharing-computer-icons-file-transfer-protocol-world-wide-web-Gf1y12PjqJpZa4GYJJTG0Nw1v.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="./transfer.html"><p class="card-title">Apply for Transfer</p></a>
+                    </div>
+                    <p class="card-text">
+                        Allows you to initiate request for transfering NFT.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://www.kindpng.com/picc/m/87-872270_information-clipart-patient-record-search-record-icon-png.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="./viewnft.html"><p class="card-title">Check Records</p></a>
+                    </div>
+                    <p class="card-text">
+                        Allows you to view all your property NFTs
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.imgbin.com/10/20/14/imgbin-public-key-certificate-certificate-authority-certification-education-nipa-hut-nXMLhGiX3vhfA9Pi24wgnAKM5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#"><p class="card-title">Get Certificate</p></a>
+                    </div>
+                    <p class="card-text">
+                        Display your Property NFT certificates.
+                    </p>
+                </div>
+            </div>        
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <footer>
+        <div include-html="../common/footer.html"></div>
+    </footer>
+
+
+</body>
+</html>

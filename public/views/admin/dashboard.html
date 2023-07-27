@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="../../assets/style/main.css" rel="stylesheet"/>
+    <link href="../../assets/style/admin.css" rel="stylesheet">
+    <script src="../../scripts/dashboard.mjs" type="module" defer></script>
+    <title>DashBoard | Admin</title>
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+      <div include-html="../common/header.html"></div>
+    </header>
+      
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3">
+            <div id="admin-details" class="dropdown">
+              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR56rn6SPM8T2swfi_RHpSe1SWVBUMZDm9kd418KVsDq7RHyksHSEqT6mel1JQ845Erack&usqp=CAU" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>sahil@gmail.com</strong>
+              </a>
+              <a class="d-flex justify-content-end" href="../../index.html">
+                <button class="btn btn-sm btn-danger me-1 mt-2">Logout</button>
+              </a>
+            </div>
+            <hr>
+            <div class="vertical-tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-pills flex-column" role="tablist">
+                    <li role="presentation" class="nav-item active">
+                      <a class="nav-link" href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                      <a class="nav-link" href="#Section2" aria-controls="nft" role="tab" data-toggle="tab">Mint Land NFT</a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                      <a class="nav-link" href="#Section3" aria-controls="transfer" role="tab" data-toggle="tab" id="transfer-req-btn">Transfer Requests</a>
+                    </li>
+                    <li role="presentation" class="nav-item ">
+                      <a class="nav-link" href="#Section4" aria-controls="correction" role="tab" data-toggle="tab" id="correction-req-btn">Correction Requests</a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <!-- Tab panes -->
+          <div class="d-flex justify-content-center">
+            <div id="alert-box" role="alert" style="display: none;">
+                <h5 id="alert-message" class="text-center"></h5>
+            </div> 
+          </div>
+          <div class="d-flex justify-content-center" style="margin-bottom: -25px; margin-top: 10px;">
+              <div class="spinner" style="display: none;">
+                  <div class="d-flex justify-content-center">
+                      <span>Transaction in Progress... Please don't leave</span>
+                      <div class="spinner-border" role="status"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="tab-content tabs">
+            <div role="tabpanel" class="tab-pane fade in active d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" id="Section1">
+              <h2 class="h2">Admin Dashboard</h1>
+              <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                  <span data-feather="calendar"></span>
+                  This week
+                </button>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="Section2">
+              <div class="container">
+                <h1 class="text-center m-3">Mint Land deed NFT</h1>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div id="mint-form">
+                            <h3 class="text-center">Enter Details</h3>
+                            <div class="mb-3">
+                                <label for="walletAddress" class="form-label">Recepient</label>
+                                <input type="text" class="form-control" id="walletAddress" placeholder="Enter a wallet address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nft-url" class="form-label">URL</label>
+                                <input type="text" class="form-control" id="nft-url" placeholder="Enter Pinata file address" required>
+                            </div>
+                            <button id="submit-btn">MINT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="Section3">
+              <div class="container">
+                  <h1 class="text-center m-3">Approve NFT Transfer</h1>
+                  <table class="table table-striped table-hover" id="result-table">
+                      <thead>
+                          <tr>
+                              <td>Request Time</td>
+                              <td>Sender Address</td>
+                              <td>Receiver Address</td>
+                              <td>Token ID</td>
+                              <td>Operations</td>
+                          </tr>
+                      </thead>
+                      <tbody id="result-body" class="m-2">
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="Section4">
+              <div class="container">
+                <h1 class="text-center m-3">Approve NFT Update</h1>
+                <table class="table table-striped table-hover text-center" id="result-table-correction">
+                    <thead>
+                        <tr>
+                            <td>Request Time</td>
+                            <td>Sender Address</td>
+                            <td>Request Description</td>
+                            <td>New Value</td>
+                            <td>Token ID</td>
+                            <td>Operations</td>
+                        </tr>
+                    </thead>
+                    <tbody id="result-body-correction" class="m-2">
+                    </tbody>
+                </table>
+              </div>
+             </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>

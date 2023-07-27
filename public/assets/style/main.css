@@ -1,0 +1,122 @@
+root {
+    --text-color : #707070;
+    --primary-color : #fdb03d;
+    --bg-color : #292560;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+body > .main{
+    min-height: 368px;
+}
+
+body .back-btn{
+    padding: 10px;
+    border: none;
+    background-color: green;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1{
+    margin: 10px;
+}
+
+/* header and footer */
+.division{
+    border: 10px solid rgb(82, 247, 247);
+}
+
+.common-img{
+    width: 80%;
+}
+
+/* pages */
+#alert-box{
+    width: 700px;
+    height: 100px;
+}
+
+.spinner{
+    display: none;
+    border-radius: 10px;    
+    padding: 30px;
+    height: 100px;
+    z-index: 1;
+    width: 700px;
+    background-color: gray;
+}
+
+.spinner-border{
+    margin-left: 10px;
+}
+
+/* homepage */
+.card{
+    width: 19%;
+    margin: 0 0.5%;
+}
+
+.card img{
+    height: 100%;
+}
+
+.card-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.card-text{
+    padding: 5px 10px;
+}
+
+#sidebarMenu{
+    min-height: 550px;
+}
+
+#sidebarMenu #admin-details a{
+    text-decoration: none;
+}
+
+#sidebarMenu #admin-details a strong{
+    color: black;
+    
+}
+
+#sidebarMenu .vertical-tab{
+    margin-top: 10%;
+}
+
+#spinner-div{
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    z-index: 1;
+}
+
+#alert-div{
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    z-index: 1;
+}
